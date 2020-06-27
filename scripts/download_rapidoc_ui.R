@@ -30,14 +30,14 @@ local({
   # saving R version at end of script
 
   flist <- dir(inst, full.names = TRUE)
-  flist <- flist[which(! basename(flist) %in% c("index.html", "rapidoc-min.js"))]
+  flist <- flist[which(! basename(flist) %in% c("plumber.svg"))]
   unlink(flist, recursive = TRUE)
 
   # download base file
   latest_index <- "https://unpkg.com/rapidoc@latest/dist/index.html"
   download.file(latest_index, file.path(inst, basename(latest_index)), quiet = TRUE, mode = "wb")
   download.file(latest_js, file.path(inst, basename(latest_js)), quiet = TRUE, mode = "wb")
-  
+
   # download ressources linked in index.html
   index_lines <- file.path(inst, basename(latest_index)) %>%
     readLines(warn = FALSE)
@@ -60,7 +60,7 @@ local({
     index_lines <- gsub(f, paste0("./", linked_local_name(f)), index_lines, fixed = TRUE)
   }
   writeLines(index_lines, file.path(inst, "index.html"))
-  
+
   # download each font file to be able to be served locally
   css_lines <- readLines(file.path(inst, "fonts.css"), warn = FALSE)
   font_urls <- css_lines %>%

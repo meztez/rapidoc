@@ -4,10 +4,22 @@
 \alias{rapidoc_spec}
 \title{RapiDoc Index File with OpenAPI Path}
 \usage{
-rapidoc_spec(spec_url = "https://petstore.swagger.io/v2/swagger.json")
+rapidoc_spec(
+  spec_url = "https://petstore.swagger.io/v2/swagger.json",
+  fonts_css = "./fonts.css",
+  rapidoc_options = structure(list(), names = character()),
+  slots = character()
+)
 }
 \arguments{
 \item{spec_url}{Url to an openAPI specification}
+
+\item{fonts_css}{Path to the fonts css file if you want to use fonts other than the default one.}
+
+\item{rapidoc_options}{Named list of options recognized by RapiDoc inside the `rapi-doc` tag. You can replace `-` by underscore in names.
+See https://mrin9.github.io/RapiDoc/api.html for a list of available options.}
+
+\item{slots}{HTML content to include between `<rapi-doc>` and `</rapi-doc>`}
 }
 \value{
 large string containing the contents of \code{\link{rapidoc_index}()} with
