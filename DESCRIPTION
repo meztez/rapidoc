@@ -1,0 +1,21 @@
+Package: rapidoc
+Type: Package
+Title: Generates 'RapiDoc' Documentation from an 'OpenAPI' Specification
+Version: 8.1.1
+Authors@R: c(
+    person("Bruno", "Tremblay", email = "openr@neoxone.com", role = c("aut", "cre")),
+    person("Barret", "Schloerke", email = "barret@rstudio.com", role = "ctb",
+           comment = c(ORCID = "0000-0001-9986-114X")),
+    person("Mrinmoy", "Majumdar", email = "mrin9@yahoo.com", role = c("aut", "cph")))
+Maintainer: Bruno Tremblay <openr@neoxone.com>
+Description: A collection of 'HTML', 'JavaScript', 'CSS' and fonts
+  assets that generate 'RapiDoc' documentation from an 'OpenAPI' Specification:
+   <https://mrin9.github.io/RapiDoc/>.
+License: MIT + file LICENSE
+Imports: jsonlite
+Suggests: plumber (>= 0.5)
+Encoding: UTF-8
+LazyData: true
+URL: https://github.com/meztez/rapidoc
+BugReports: https://github.com/meztez/rapidoc/issues
+RoxygenNote: 7.1.0

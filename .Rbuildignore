@@ -1,0 +1,9 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+README.md
+README.Rmd
+^scripts
+^\.travis\.yml$
+^\.lintr$
+cran-comments.md
+^\.github$
