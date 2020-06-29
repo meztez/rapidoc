@@ -106,6 +106,7 @@ plumber_add_ui <- function() {
                          allow_server_selection = FALSE,
                          primary_color = "#ea526f",
                          allow_authentication = FALSE,
+                         layout = "column",
                          ...) {
           rapidoc::rapidoc_spec(
             spec_url = "\" + window.location.origin + window.location.pathname.replace(/\\(__rapidoc__\\\\/|__rapidoc__\\\\/index.html\\)$/, '') + 'openapi.json' + \"",
@@ -115,6 +116,7 @@ plumber_add_ui <- function() {
             allow_server_selection = allow_server_selection,
             primary_color = primary_color,
             allow_authentication = allow_authentication,
+            layout = layout,
             ...
           )
         },
