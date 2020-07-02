@@ -95,8 +95,16 @@ rapidoc_spec <- function(spec_url = "https://petstore.swagger.io/v2/swagger.json
 
 plumber_add_ui <- function() {
   if (requireNamespace("plumber", quietly = TRUE)) {
+    add_ui <- tryCatch(
+      plumber::add_ui,
+      error = function(err) {
+        function(...) {
+          return()
+        }
+      }
+    )
     logo <- '<img slot="logo" src="./plumber.svg" width=36px style=\"margin-left:7px\"/>'
-    plumber::add_ui(
+    add_ui(
       list(
         package = "rapidoc",
         name = "rapidoc",
