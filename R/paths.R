@@ -93,10 +93,10 @@ rapidoc_spec <- function(spec_url = "https://petstore.swagger.io/v2/swagger.json
   index_txt
 }
 
-plumber_add_ui <- function() {
+plumber_register_ui <- function() {
   if (requireNamespace("plumber", quietly = TRUE)) {
-    add_ui <- tryCatch(
-      plumber::add_ui,
+    register_ui <- tryCatch(
+      plumber::register_ui,
       error = function(err) {
         function(...) {
           return()
@@ -104,7 +104,7 @@ plumber_add_ui <- function() {
       }
     )
     logo <- '<img slot="logo" src="./plumber.svg" width=36px style=\"margin-left:7px\"/>'
-    add_ui(
+    register_ui(
       list(
         package = "rapidoc",
         name = "rapidoc",
@@ -137,5 +137,5 @@ plumber_add_ui <- function() {
 }
 
 .onLoad <- function(...) {
-  plumber_add_ui()
+  plumber_register_ui()
 }
