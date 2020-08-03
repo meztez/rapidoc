@@ -105,33 +105,30 @@ plumber_register_ui <- function() {
     )
     logo <- '<img slot="logo" src="./plumber.svg" width=36px style=\"margin-left:7px\"/>'
     register_ui(
-      list(
-        package = "rapidoc",
-        name = "rapidoc",
-        index = function(fonts_css = "./fonts.css",
-                         slots = logo,
-                         heading_text = paste("Plumber", utils::packageVersion("plumber")),
-                         allow_server_selection = FALSE,
-                         primary_color = "#ea526f",
-                         allow_authentication = FALSE,
-                         layout = "column",
-                         ...) {
-          rapidoc::rapidoc_spec(
-            spec_url = "\" + window.location.origin + window.location.pathname.replace(/\\(__rapidoc__\\\\/|__rapidoc__\\\\/index.html\\)$/, '') + 'openapi.json' + \"",
-            fonts_css = fonts_css,
-            slots = slots,
-            heading_text = heading_text,
-            allow_server_selection = allow_server_selection,
-            primary_color = primary_color,
-            allow_authentication = allow_authentication,
-            layout = layout,
-            ...
-          )
-        },
-        static = function(...) {
-          rapidoc::rapidoc_path()
-        }
-      )
+      name = "rapidoc",
+      index = function(fonts_css = "./fonts.css",
+                       slots = logo,
+                       heading_text = paste("Plumber", utils::packageVersion("plumber")),
+                       allow_server_selection = FALSE,
+                       primary_color = "#ea526f",
+                       allow_authentication = FALSE,
+                       layout = "column",
+                       ...) {
+        rapidoc::rapidoc_spec(
+          spec_url = "\" + window.location.origin + window.location.pathname.replace(/\\(__rapidoc__\\\\/|__rapidoc__\\\\/index.html\\)$/, '') + 'openapi.json' + \"",
+          fonts_css = fonts_css,
+          slots = slots,
+          heading_text = heading_text,
+          allow_server_selection = allow_server_selection,
+          primary_color = primary_color,
+          allow_authentication = allow_authentication,
+          layout = layout,
+          ...
+        )
+      },
+      static = function(...) {
+        rapidoc::rapidoc_path()
+      }
     )
   }
 }
