@@ -93,46 +93,50 @@ rapidoc_spec <- function(spec_url = "https://petstore.swagger.io/v2/swagger.json
   index_txt
 }
 
-plumber_register_ui <- function() {
-  if (requireNamespace("plumber", quietly = TRUE)) {
-    register_ui <- tryCatch(
-      plumber::register_ui,
-      error = function(err) {
-        function(...) {
-          return()
-        }
-      }
-    )
-    logo <- '<img slot="logo" src="./plumber.svg" width=36px style=\"margin-left:7px\"/>'
-    register_ui(
-      name = "rapidoc",
-      index = function(fonts_css = "./fonts.css",
-                       slots = logo,
-                       heading_text = paste("Plumber", utils::packageVersion("plumber")),
-                       allow_server_selection = FALSE,
-                       primary_color = "#ea526f",
-                       allow_authentication = FALSE,
-                       layout = "column",
-                       ...) {
-        rapidoc::rapidoc_spec(
-          spec_url = "\" + window.location.origin + window.location.pathname.replace(/\\(__rapidoc__\\\\/|__rapidoc__\\\\/index.html\\)$/, '') + 'openapi.json' + \"",
-          fonts_css = fonts_css,
-          slots = slots,
-          heading_text = heading_text,
-          allow_server_selection = allow_server_selection,
-          primary_color = primary_color,
-          allow_authentication = allow_authentication,
-          layout = layout,
-          ...
-        )
-      },
-      static = function(...) {
-        rapidoc::rapidoc_path()
-      }
-    )
-  }
+
+plumber_docs <- function() {
+  logo <- '<img slot="logo" src="./plumber.svg" width=36px style=\"margin-left:7px\"/>'
+  list(
+    name = "rapidoc",
+    index = function(fonts_css = "./fonts.css",
+                      slots = logo,
+                      heading_text = paste("Plumber", utils::packageVersion("plumber")),
+                      allow_server_selection = FALSE,
+                      primary_color = "#ea526f",
+                      allow_authentication = FALSE,
+                      layout = "column",
+                      ...) {
+      rapidoc::rapidoc_spec(
+        spec_url = "\" + window.location.origin + window.location.pathname.replace(/\\(__docs__\\\\/|__docs__\\\\/index.html\\)$/, '') + 'openapi.json' + \"",
+        fonts_css = fonts_css,
+        slots = slots,
+        heading_text = heading_text,
+        allow_server_selection = allow_server_selection,
+        primary_color = primary_color,
+        allow_authentication = allow_authentication,
+        layout = layout,
+        ...
+      )
+    },
+    static = function(...) {
+      rapidoc::rapidoc_path()
+    }
+  )
 }
 
 .onLoad <- function(...) {
-  plumber_register_ui()
+  plumber_register_docs <- function() {
+    tryCatch({
+      do.call(plumber::register_docs, plumber_docs())
+    }, error = function(e) {
+      message("Error registering rapidoc docs. Error: ", e)
+    })
+  }
+
+  setHook(packageEvent("plumber", "onLoad"), function(...) {
+    plumber_register_docs()
+  })
+  if ("plumber" %in% loadedNamespaces()) {
+    plumber_register_docs()
+  }
 }
