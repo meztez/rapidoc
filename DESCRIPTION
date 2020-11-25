@@ -1,7 +1,7 @@
 Package: rapidoc
 Type: Package
 Title: Generates 'RapiDoc' Documentation from an 'OpenAPI' Specification
-Version: 8.3.0
+Version: 8.4.0
 Authors@R: c(
     person("Bruno", "Tremblay", email = "openr@neoxone.com", role = c("aut", "cre")),
     person("Barret", "Schloerke", email = "barret@rstudio.com", role = "ctb",

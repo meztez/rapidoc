@@ -1,3 +1,8 @@
+# rapidoc 8.4.0
+
+- Adds support for RapiDoc 8.4.0
+
+
 # rapidoc 8.3.0
 
 - Adds support for RapiDoc 8.3.0
