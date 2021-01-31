@@ -10,8 +10,9 @@ status](https://github.com/meztez/rapidoc/workflows/R-CMD-check/badge.svg)](http
 community](https://img.shields.io/badge/community-plumber-blue?style=social&logo=rstudio&logoColor=75AADB)](https://community.rstudio.com/tag/plumber)
 <!-- badges: end -->
 
-RapiDoc is a collection of `HTML`, `JavaScript`, `CSS` and fonts assets
-that generate `RapiDoc` documentation from an OpenAPI Specification.
+`rapidoc` is a collection of `HTML`, `JavaScript`, `CSS` and fonts
+assets that generate `RapiDoc` documentation from an OpenAPI
+Specification.
 
 The main purpose of this package is to enable package authors to create
 APIs that are compatible with
