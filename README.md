@@ -1,4 +1,4 @@
-Generates ‘RapiDoc’ documentation from an OAS Compliant API
+Generates `RapiDoc` documentation from an OAS Compliant API
 ================
 
 <!-- badges: start -->
@@ -10,8 +10,8 @@ status](https://github.com/meztez/rapidoc/workflows/R-CMD-check/badge.svg)](http
 community](https://img.shields.io/badge/community-shiny-blue?style=social&logo=rstudio&logoColor=75AADB)](https://community.rstudio.com/tag/rapidoc)
 <!-- badges: end -->
 
-RapiDoc is a collection of ‘HTML’, ‘JavaScript’, ‘CSS’ and fonts assets
-that generate ‘RapiDoc’ documentation from an OpenAPI Specification.
+RapiDoc is a collection of `HTML`, `JavaScript`, `CSS` and fonts assets
+that generate `RapiDoc` documentation from an OpenAPI Specification.
 
 The main purpose of this package is to enable package authors to create
 APIs that are compatible with
@@ -30,13 +30,13 @@ browseURL(rapidoc_index())
 
 <img src="tools/readme/browse_rapidoc.png" width=450 />
 
-# Installation
+## Installation
 
 ``` r
 remotes::install_github("https://github.com/meztez/rapidoc/")
 ```
 
-# Use with `plumber` R package
+## Use with `plumber` R package
 
 ### `plumber` annotation syntax
 
@@ -60,7 +60,7 @@ function() {
 library(plumber)
 library(rapidoc)
 pr() %>%
-  pr_get("hello", "hello") %>%
+  pr_get("hello", function() {"hello"}) %>%
   pr_set_docs("rapidoc", bg_color = "#00DE9C") %>%
   pr_run()
 ```
