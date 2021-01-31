@@ -7,7 +7,7 @@ Generates `RapiDoc` documentation from an OAS Compliant API
 [![R build
 status](https://github.com/meztez/rapidoc/workflows/R-CMD-check/badge.svg)](https://github.com/meztez/rapidoc/actions)
 [![RStudio
-community](https://img.shields.io/badge/community-shiny-blue?style=social&logo=rstudio&logoColor=75AADB)](https://community.rstudio.com/tag/rapidoc)
+community](https://img.shields.io/badge/community-plumber-blue?style=social&logo=rstudio&logoColor=75AADB)](https://community.rstudio.com/tag/plumber)
 <!-- badges: end -->
 
 RapiDoc is a collection of `HTML`, `JavaScript`, `CSS` and fonts assets
