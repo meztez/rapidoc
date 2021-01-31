@@ -31,9 +31,13 @@ provided OpenAPI Specification URL.
 }
 \examples{
 if (interactive()) {
+  slot1 <- '
+  <img slot="logo"
+  src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_\%22G\%22_Logo.svg"
+  width=36px/>'
   rapidoc_spec("https://petstore.swagger.io/v2/swagger.json",
                fonts_css = "./fonts.css",
-               slots = '<img slot="logo" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_\%22G\%22_Logo.svg" width=36px/>',
+               slots = c(slot1),
                heading_text = "Google",
                allow_server_selection = FALSE)
 }

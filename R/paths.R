@@ -51,9 +51,13 @@ rapidoc_index <- function() {
 #' the appropriate speicification path changed to the \code{spec_url} value.
 #' @examples
 #' if (interactive()) {
+#'   slot1 <- '
+#'   <img slot="logo"
+#'   src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+#'   width=36px/>'
 #'   rapidoc_spec("https://petstore.swagger.io/v2/swagger.json",
 #'                fonts_css = "./fonts.css",
-#'                slots = '<img slot="logo" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" width=36px/>',
+#'                slots = c(slot1),
 #'                heading_text = "Google",
 #'                allow_server_selection = FALSE)
 #' }
@@ -124,15 +128,16 @@ plumber_docs <- function() {
   )
 }
 
-.onLoad <- function(...) {
-  plumber_register_docs <- function() {
-    tryCatch({
-      do.call(plumber::register_docs, plumber_docs())
-    }, error = function(e) {
-      message("Error registering rapidoc docs. Error: ", e)
-    })
-  }
+plumber_register_docs <- function() {
+  tryCatch({
+    do.call(plumber::register_docs, plumber_docs())
+  }, error = function(e) {
+    message("Error registering rapidoc docs. Error: ", e)
+    NULL
+  })
+}
 
+.onLoad <- function(...) {
   setHook(packageEvent("plumber", "onLoad"), function(...) {
     plumber_register_docs()
   })
