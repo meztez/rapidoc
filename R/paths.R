@@ -76,7 +76,7 @@ rapidoc_spec <- function(spec_url = "https://petstore.swagger.io/v2/swagger.json
   index_file <- rapidoc_index()
   index_txt <- paste0(readLines(index_file), collapse = "\n")
   index_txt <- sub(
-    "<rapi-doc id=\"thedoc\"[^>]*></rapi-doc>",
+    "<rapi-doc id=\"thedoc\"(.+?)</rapi-doc>",
     paste0("<rapi-doc id=\"thedoc\" ",
            paste0(names(rapidoc_options), "=\"", rapidoc_options, "\"", collapse = " "),
            ">",

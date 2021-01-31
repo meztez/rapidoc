@@ -25,4 +25,54 @@ browseURL(rapidoc_index())
 
 <img src="tools/readme/browse_rapidoc.png" width=450 />
 
-To learn more about 'RapiDoc' visit: [RapiDoc](https://mrin9.github.io/RapiDoc/)
+# Installation
+
+```r
+remotes::install_github("https://github.com/meztez/rapidoc/")
+```
+
+# Use with `plumber` R package
+
+### `plumber` annotation syntax
+```r
+library(rapidoc)
+
+#* @plumber
+function(pr) {
+  pr$setDocs("rapidoc", bg_color = "#00DE9C")
+}
+
+#* @get /hello
+function() {
+  "hello"
+}
+```
+
+### `plumber` programmatic usage
+
+```r
+library(plumber)
+library(rapidoc)
+pr() %>%
+  pr_get("hello", "hello") %>%
+  pr_set_docs("rapidoc", bg_color = "#00DE9C") %>%
+  pr_run()
+
+```
+
+### Using `RapiDoc` API attributes
+
+Further customize `RapiDoc` using its API attributes. Use underscores instead of hyphens. R boolean values are converted.
+
+```r
+pr()$setDocs(bg_color = "#F5F", show_info = FALSE)
+
+pr() %>% pr_set_docs("rapidoc", bg_color = "#F5F", show_info = FALSE)
+```
+
+The full set of `RapiDoc` API attributes is supported. 
+
+To learn more about `RapiDoc` visit:
+
+* [RapiDoc](https://mrin9.github.io/RapiDoc/)
+* [RapiDoc API attributes reference](https://mrin9.github.io/RapiDoc/api.html)
