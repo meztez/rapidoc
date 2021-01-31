@@ -33,7 +33,7 @@ browseURL(rapidoc_index())
 ## Installation
 
 ``` r
-remotes::install_github("https://github.com/meztez/rapidoc/")
+remotes::install_github("https://github.com/meztez/rapidoc")
 ```
 
 ## Use with `plumber` R package
@@ -71,7 +71,7 @@ Further customize `RapiDoc` using its API attributes. Use underscores
 instead of hyphens. R boolean values are converted.
 
 ``` r
-pr()$setDocs(bg_color = "#F5F", show_info = FALSE)
+pr()$setDocs("rapidoc", bg_color = "#F5F", show_info = FALSE)
 
 pr() %>% pr_set_docs("rapidoc", bg_color = "#F5F", show_info = FALSE)
 ```

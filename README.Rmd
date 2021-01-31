@@ -28,7 +28,7 @@ browseURL(rapidoc_index())
 ## Installation
 
 ```r
-remotes::install_github("https://github.com/meztez/rapidoc/")
+remotes::install_github("https://github.com/meztez/rapidoc")
 ```
 
 ## Use with `plumber` R package
