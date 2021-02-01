@@ -27,14 +27,10 @@ Useful links:
 \author{
 \strong{Maintainer}: Bruno Tremblay \email{openr@neoxone.com}
 
-Authors:
-\itemize{
-  \item Mrinmoy Majumdar \email{mrin9@yahoo.com} [copyright holder]
-}
-
 Other contributors:
 \itemize{
   \item Barret Schloerke \email{barret@rstudio.com} (\href{https://orcid.org/0000-0001-9986-114X}{ORCID}) [contributor]
+  \item Mrinmoy Majumdar \email{mrin9@yahoo.com} [copyright holder]
 }
 
 }

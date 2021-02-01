@@ -7,3 +7,4 @@ README.Rmd
 ^\.lintr$
 cran-comments.md
 ^\.github$
+^LICENSE\.md$
