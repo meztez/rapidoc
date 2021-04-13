@@ -44,7 +44,7 @@ local({
   linked_ressources <-  index_lines %>%
     paste0(collapse = "\n") %>%
     gregexpr("(?:href|src)=\"([^\"]+)\"", .) %>%
-    regmatches(index_lines, .) %>%
+    regmatches(paste0(index_lines, collapse = "\n"), .) %>%
     unlist %>%
     sub("^(href|src)=\"", "", .) %>%
     sub("\"$", "", .) %>%
