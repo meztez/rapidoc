@@ -11,9 +11,9 @@ local({
   desc <- read.dcf("DESCRIPTION")
   desc_version <- desc[1,"Version"] %>% unname()
   latest_version <- latest_js %>%
-    readLines(2) %>%
-    extract(2) %>%
-    sub(" \\* RapiDoc ([^-]+) .*$", "\\1", .)
+    readLines(1) %>%
+    extract(1) %>%
+    sub("/\\*! RapiDoc ([0-9.]+) .*$", "\\1", .)
   r_version <- latest_version %>%
     gsub("[a-zA-Z-]", "", .)
 
@@ -62,9 +62,9 @@ local({
   writeLines(index_lines, file.path(inst, "index.html"))
 
   # download each font file to be able to be served locally
-  css_lines <- readLines(file.path(inst, "fonts.css"), warn = FALSE)
+  css_lines <- readLines(file.path(inst, basename(latest_js)), warn = FALSE)
   font_urls <- css_lines %>%
-    regexpr("url\\(([^\\)]+)\\)", .) %>%
+    regexpr("url\\(https([^\\)]+)\\)", .) %>%
     regmatches(css_lines, .) %>%
     sub("^url\\(\\s*", "", .) %>%
     sub("\\s*\\)$", "", .)
@@ -78,9 +78,9 @@ local({
   }
 
   # update font file to be served locally
-  readLines(file.path(inst, "fonts.css"), warn = FALSE) %>%
+  readLines(file.path(inst, basename(latest_js)), warn = FALSE) %>%
     gsub("https://fonts.gstatic.com/([^\\)]+)", "'./\\1'", .) %>%
-    writeLines(., file.path(inst, "fonts.css"))
+    writeLines(., file.path(inst, basename(latest_js)))
 
   message("Updated ./inst/dist to version: ", latest_version)
 
