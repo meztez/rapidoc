@@ -64,10 +64,11 @@ local({
   # download each font file to be able to be served locally
   css_lines <- readLines(file.path(inst, basename(latest_js)), warn = FALSE)
   font_urls <- css_lines %>%
-    regexpr("url\\(https([^\\)]+)\\)", .) %>%
+    gregexpr("url\\(https([^\\)]+)\\)", .) %>%
     regmatches(css_lines, .) %>%
-    sub("^url\\(\\s*", "", .) %>%
-    sub("\\s*\\)$", "", .)
+    unlist() %>%
+    gsub("^url\\(\\s*", "", .) %>%
+    gsub("\\s*\\)$", "", .)
   for (ft in font_urls) {
     subpath <- gsub("https://fonts.gstatic.com/", "", ft)
     ftpath <- file.path(inst, subpath)
