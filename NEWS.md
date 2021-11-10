@@ -1,3 +1,8 @@
+# rapidoc 9.1.3
+
+- Adds support for RapiDoc 9.1.3
+
+
 # rapidoc 9.0.0
 
 - Adds support for RapiDoc 9.0.0

@@ -48,7 +48,7 @@ rapidoc_index <- function() {
 #' @param ... Other options recognized by RapiDoc inside the `rapi-doc` tag. You can replace `-` by underscore in names.
 #' See https://mrin9.github.io/RapiDoc/api.html for a list of available options.
 #' @return large string containing the contents of \code{\link{rapidoc_index}()} with
-#' the appropriate speicification path changed to the \code{spec_url} value.
+#' the appropriate specification path changed to the \code{spec_url} value.
 #' @examples
 #' if (interactive()) {
 #'   slot1 <- '
@@ -80,7 +80,7 @@ rapidoc_spec <- function(spec_url = "https://petstore.swagger.io/v2/swagger.json
   index_file <- rapidoc_index()
   index_txt <- paste0(readLines(index_file), collapse = "\n")
   index_txt <- sub(
-    "<rapi-doc id=\"thedoc\"(.+?)</rapi-doc>",
+    "<rapi-doc spec-url(.+?)</rapi-doc>",
     paste0("<rapi-doc id=\"thedoc\" ",
            paste0(names(rapidoc_options), "=\"", rapidoc_options, "\"", collapse = " "),
            ">",
