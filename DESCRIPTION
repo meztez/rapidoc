@@ -1,7 +1,7 @@
 Package: rapidoc
 Type: Package
 Title: Generates 'RapiDoc' Documentation from an 'OpenAPI' Specification
-Version: 9.3.3
+Version: 9.3.4
 Authors@R: c(
     person("Bruno", "Tremblay", email = "openr@neoxone.com", role = c("aut", "cre")),
     person("Barret", "Schloerke", email = "barret@rstudio.com", role = "ctb",
@@ -12,10 +12,12 @@ Description: A collection of 'HTML', 'JavaScript', 'CSS' and fonts
   assets that generate 'RapiDoc' documentation from an 'OpenAPI' Specification:
    <https://mrin9.github.io/RapiDoc/>.
 License: MIT + file LICENSE
-Imports: jsonlite
-Suggests: plumber (>= 1.0), testthat
+Suggests: 
+    plumber (>= 1.0),
+    testthat (>= 3.0.0)
 Encoding: UTF-8
 LazyData: true
 URL: https://github.com/meztez/rapidoc
 BugReports: https://github.com/meztez/rapidoc/issues
 RoxygenNote: 7.1.2
+Config/testthat/edition: 3
