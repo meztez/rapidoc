@@ -10,11 +10,11 @@ rapidoc_path()
 Retrieves the path to rapidoc resources.
 }
 \examples{
-
+\dontrun{
 if (interactive()) {
   browseURL(rapidoc_path())
 } else {
   print(paste("You can explore rapidoc resources under: ", rapidoc_path()))
 }
-
+}
 }

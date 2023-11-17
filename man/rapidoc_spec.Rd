@@ -30,6 +30,7 @@ Produces the content for a \code{index.html} file that will attempt to access a
 provided OpenAPI Specification URL.
 }
 \examples{
+\dontrun{
 if (interactive()) {
   slot1 <- '
   <img slot="logo"
@@ -40,5 +41,6 @@ if (interactive()) {
                slots = c(slot1),
                heading_text = "Google",
                allow_server_selection = FALSE)
+}
 }
 }

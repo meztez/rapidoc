@@ -3,8 +3,11 @@
 README.md
 README.Rmd
 ^scripts
+^tools
 ^\.travis\.yml$
 ^\.lintr$
 cran-comments.md
 ^\.github$
 ^LICENSE\.md$
+
+^cran-comments\.md$

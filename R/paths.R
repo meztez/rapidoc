@@ -3,13 +3,13 @@
 #' Retrieves the path to rapidoc resources.
 #'
 #' @examples
-#'
+#' \dontrun{
 #' if (interactive()) {
 #'   browseURL(rapidoc_path())
 #' } else {
 #'   print(paste("You can explore rapidoc resources under: ", rapidoc_path()))
 #' }
-#'
+#' }
 #' @export
 #' @rdname rapidoc_path
 rapidoc_path <- function() {
@@ -24,13 +24,13 @@ rapidoc_path <- function() {
 #' Retrieves the path to the rapidoc index file.
 #'
 #' @examples
-#'
+#' \dontrun{
 #' if (interactive()) {
 #'   browseURL(rapidoc_index())
 #' } else {
 #'   print(paste("You can use rapidoc under: ", rapidoc_index()))
 #' }
-#'
+#' }
 #' @export
 #' @rdname rapidoc_index
 rapidoc_index <- function() {
@@ -50,6 +50,7 @@ rapidoc_index <- function() {
 #' @return large string containing the contents of \code{\link{rapidoc_index}()} with
 #' the appropriate specification path changed to the \code{spec_url} value.
 #' @examples
+#' \dontrun{
 #' if (interactive()) {
 #'   slot1 <- '
 #'   <img slot="logo"
@@ -60,6 +61,7 @@ rapidoc_index <- function() {
 #'                slots = c(slot1),
 #'                heading_text = "Google",
 #'                allow_server_selection = FALSE)
+#' }
 #' }
 #' @export
 #' @rdname rapidoc_spec

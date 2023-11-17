@@ -10,11 +10,11 @@ rapidoc_index()
 Retrieves the path to the rapidoc index file.
 }
 \examples{
-
+\dontrun{
 if (interactive()) {
   browseURL(rapidoc_index())
 } else {
   print(paste("You can use rapidoc under: ", rapidoc_index()))
 }
-
+}
 }
