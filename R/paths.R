@@ -42,7 +42,7 @@ rapidoc_index <- function() {
 #' Produces the content for a \code{index.html} file that will attempt to access a
 #' provided OpenAPI Specification URL.
 #'
-#' @param spec_url Url to an openAPI specification
+#' @param spec_url Url to an OpenAPI specification
 #' @param fonts_css Path to the fonts css file if you want to use fonts other than the default one.
 #' @param slots HTML content to include between `<rapi-doc>` and `</rapi-doc>`
 #' @param ... Other options recognized by RapiDoc inside the `rapi-doc` tag. You can replace `-` by underscore in names.

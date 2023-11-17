@@ -12,7 +12,7 @@ rapidoc_spec(
 )
 }
 \arguments{
-\item{spec_url}{Url to an openAPI specification}
+\item{spec_url}{Url to an OpenAPI specification}
 
 \item{fonts_css}{Path to the fonts css file if you want to use fonts other than the default one.}
 
